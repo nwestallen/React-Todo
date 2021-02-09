@@ -8,7 +8,6 @@ class TodoList extends React.Component {
     render() {
         return(
             <div>
-                <TodoForm />
                 {this.props.toDo.map(item => <Todo toDo={item} />)}
             </div>
         )

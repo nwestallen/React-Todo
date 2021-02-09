@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './/components/TodoList';
+import TodoForm from './components/TodoForm';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -12,10 +13,20 @@ class App extends React.Component {
       animal: 'Cat'
     };
   }
+
+  addItem = item => {
+    //const item = {task:'tst', id: 4444, completed: false};
+    this.setState({
+      ...this,
+      toDo: [...this.state.toDo, item]
+    })
+  };
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <TodoForm addItem={this.addItem}/>
         <TodoList toDo={this.state.toDo}/>
       </div>
     );
