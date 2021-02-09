@@ -7,7 +7,7 @@ class TodoList extends React.Component {
     render() {
         return(
             <div>
-                {this.props.toDo.map(item => <Todo toDo={item} toggleComplete={this.props.toggleComplete}/>)}
+                {this.props.toDo.map(item => <Todo toDo={item} toggleComplete={this.props.toggleComplete} key={item.id}/>)}
             </div>
         )
     }
